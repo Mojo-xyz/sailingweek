@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SOMABAY Sailing Week 2027 · Concept · Red Sea Sails</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════
+   IMAGES — put files in a folder called "images" next to
+   this HTML, named exactly as shown on each placeholder.
+   Videos go in a "videos" folder. Missing files just stay
+   as placeholders — nothing breaks.
+
+   The whole pitch works with as few as 5 files:
+     images/hero.jpg     images/parade.jpg
+     images/nights.jpg   images/village.jpg
+     videos/video-1.mp4  videos/video-2.mp4
+   ═══════════════════════════════════════════════════════ */
+:root{
+  --img-hero:     url('images/hero.jpg');
+  --img-nights:   url('images/nights.jpg');
+
+  /* ══ PEARL / WARM WATER PALETTE ══ */
+  --cream:#FDFCFA; --sand:#F7F6F3; --sand-deep:#EEEDE9;
+  --deep:#0E3540; --deep-mid:#14565F;
+  --turq:#00B4B4; --turq-dark:#008A8A;
+  --sun:#E9A13B; --sun-soft:#FBF4E4;
+  --coral:#D9633B; --coral-soft:#FBEAE2;
+  --text-primary:#123039; --text-secondary:#4A6670; --text-muted:#8FA5AC;
+  --text-white:#ffffff; --text-white-dim:rgba(255,255,255,0.78);
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --border:0.5px solid #E3E1DC;
+  --border-sun:0.5px solid rgba(233,161,59,0.4);
+  --border-deep:0.5px solid rgba(18,48,57,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+.proposal{font-family:var(--font-body);background:var(--sand);width:100%}
+
+.section{min-height:100vh;width:100%;display:flex;flex-direction:column;justify-content:center;padding:64px 72px;position:relative;overflow:hidden}
+.s-cream{background:var(--cream)} .s-sand{background:var(--sand)}
+.s-sand-deep{background:var(--sand-deep)} .s-deep{background:var(--deep)}
+.s-deep-mid{background:var(--deep-mid)}
+.section::after{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--sun);z-index:4}
+.content{position:relative;z-index:2;max-width:1140px;width:100%}
+
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:4px;color:var(--turq-dark);text-transform:uppercase;margin-bottom:14px}
+.eyebrow-sun{color:var(--sun)} .eyebrow-white{color:rgba(255,255,255,0.6)}
+.headline{font-family:var(--font-display);font-size:clamp(33px,4.5vw,58px);font-weight:700;color:var(--text-primary);line-height:1.06;margin-bottom:8px}
+.headline-white{color:var(--text-white)}
+.headline em{color:var(--coral);font-style:italic}
+.headline-white em{color:var(--sun)}
+.subhead{font-size:clamp(14px,1.7vw,17px);color:var(--text-secondary);line-height:1.72;max-width:660px;margin-top:6px}
+.subhead-white{color:var(--text-white-dim)}
+.divider{position:relative;width:54px;height:2px;background:var(--coral);margin:24px 0 26px}
+.divider::after{content:'';position:absolute;right:-5px;top:-3px;width:8px;height:8px;background:var(--coral);transform:rotate(45deg)}
+.divider-turq{background:var(--turq)} .divider-turq::after{background:var(--turq)}
+.divider-sun{background:var(--sun)} .divider-sun::after{background:var(--sun)}
+
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--cream);border:var(--border-deep);padding:22px 20px;position:relative}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--turq)}
+.card-sun::before{background:var(--sun)}
+.card-coral::before{background:var(--coral)}
+.card-deep{background:var(--deep);border-color:transparent}
+.card-deep::before{background:var(--sun)}
+.card-title{font-family:var(--font-display);font-size:15.5px;font-weight:700;color:var(--text-primary);margin-bottom:7px}
+.card-title-white{color:var(--text-white)}
+.card-body{font-size:12.5px;color:var(--text-secondary);line-height:1.72}
+.card-body-white{color:var(--text-white-dim)}
+
+/* ══ MEDIA SLOTS ══ */
+.img-ph{position:relative;overflow:hidden;border:1px dashed rgba(18,48,57,.22);background:var(--sand-deep);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;min-height:200px;text-align:center;padding:18px}
+.img-ph>img,.img-ph>video,.img-ph>iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;z-index:3;background:var(--deep)}
+.img-ph-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted)}
+.img-ph-id{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--coral)}
+.img-ph-note{font-size:11px;color:var(--text-muted);opacity:.9;max-width:250px;line-height:1.55}
+.img-ph-dark{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+.img-ph-dark .img-ph-label,.img-ph-dark .img-ph-note{color:rgba(255,255,255,.5)}
+.img-ph-dark .img-ph-id{color:var(--sun)}
+.ref{position:absolute;bottom:0;left:0;right:0;z-index:4;
+  background:linear-gradient(transparent,rgba(14,53,64,.88));
+  padding:24px 12px 8px;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.9);text-align:left;pointer-events:none}
+
+/* ══ DAY CARDS ══ */
+.days{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.day{background:var(--cream);border:var(--border-deep);position:relative;display:flex;flex-direction:column}
+.day::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--turq);z-index:5}
+.day-peak::before{background:var(--coral)}
+.day-b{padding:20px 20px 22px;flex:1}
+.day-n{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--sun);font-weight:600;margin-bottom:6px}
+.day-peak .day-n{color:var(--coral)}
+.day-t{font-family:var(--font-display);font-size:19px;font-weight:700;color:var(--text-primary);line-height:1.2;margin-bottom:8px}
+.day-x{font-size:12.5px;color:var(--text-secondary);line-height:1.72}
+.day-tag{display:inline-block;margin-top:10px;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--turq-dark);border-top:var(--border);padding-top:8px}
+.day-peak .day-tag{color:var(--coral)}
+
+table.t{width:100%;border-collapse:collapse;margin-top:26px;background:var(--cream);border:var(--border-deep)}
+table.t th{background:var(--deep);color:rgba(255,255,255,0.65);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;text-align:left;padding:13px 16px}
+table.t td{padding:13px 16px;border-top:var(--border);font-size:12.5px;color:var(--text-secondary);line-height:1.6;vertical-align:top}
+table.t td.k{font-family:var(--font-display);font-size:14.5px;font-weight:700;color:var(--text-primary)}
+table.t td.n{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--coral);white-space:nowrap}
+table.t tr.hl td{background:var(--sun-soft)}
+
+.optgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.opt{background:var(--cream);border:var(--border-deep);position:relative}
+.opt::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--turq)}
+.opt-coral::before{background:var(--coral)}
+.opt-head{padding:24px 26px 18px;border-bottom:var(--border)}
+.opt-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--sun);font-weight:600;margin-bottom:8px}
+.opt-date{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--text-primary);line-height:1.1}
+.opt-anchor{font-size:12px;color:var(--turq-dark);margin-top:9px;font-weight:500}
+.opt-coral .opt-anchor{color:var(--coral)}
+.opt-body{padding:18px 26px 22px}
+.opt-body ul{list-style:none}
+.opt-body li{font-size:12.5px;color:var(--text-secondary);line-height:1.65;padding:6px 0 6px 18px;position:relative}
+.opt-body li::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;background:var(--turq);transform:rotate(45deg)}
+.opt-coral .opt-body li::before{background:var(--coral)}
+
+.nav-dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:100}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:rgba(18,48,57,0.2);cursor:pointer;transition:all .2s}
+.nav-dot.active,.nav-dot:hover{background:var(--sun);transform:scale(1.5)}
+.corner{position:absolute;top:28px;right:72px;font-size:9px;letter-spacing:3px;color:var(--text-muted);text-transform:uppercase;z-index:3}
+.corner-white{color:rgba(255,255,255,0.35)}
+.scroll-hint{position:absolute;bottom:28px;right:72px;font-size:9px;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;z-index:3;display:flex;align-items:center;gap:10px}
+.scroll-hint::after{content:'';display:block;width:32px;height:1px;background:var(--sun);opacity:.6}
+
+.cover-wrap{display:grid;grid-template-columns:1fr 260px;gap:60px;align-items:center}
+.cover-right{border-left:0.5px solid rgba(255,255,255,.45);padding-left:44px;display:flex;flex-direction:column;gap:26px}
+.cover-year{font-family:var(--font-display);font-size:68px;font-weight:700;color:var(--sun);line-height:1}
+.cover-badge{font-size:10px;letter-spacing:3px;color:#fff;text-transform:uppercase;line-height:2.2;font-weight:500;
+  text-shadow:0 1px 12px rgba(14,53,64,.85),0 1px 3px rgba(14,53,64,.6)}
+.partner-tag{display:inline-block;padding:6px 14px;border:var(--border-sun);font-size:10px;color:var(--sun);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.cover-hl{font-family:var(--font-display);font-size:clamp(46px,6.4vw,72px);font-weight:700;color:var(--text-primary);line-height:1}
+.cover-hl span{color:var(--coral);display:block}
+
+.closing-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:52px;align-items:start}
+.step{display:flex;gap:16px;align-items:flex-start;padding:11px 0;border-bottom:var(--border)}
+.step:last-child{border-bottom:none}
+.step-circle{width:26px;height:26px;border-radius:50%;background:var(--deep);color:var(--sun);font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-text{font-size:12.5px;color:var(--text-secondary);line-height:1.55;padding-top:3px}
+.contact-block{margin-top:26px;padding:22px 26px;background:var(--sun-soft);border:var(--border-sun)}
+.c-row{display:flex;gap:12px;margin-bottom:9px;align-items:center}
+.c-label{font-size:10px;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;min-width:60px}
+.c-val{font-size:13px;color:var(--text-secondary)}
+.c-val a{color:var(--turq-dark);text-decoration:none}
+
+.note{font-size:11px;color:var(--text-muted);line-height:1.6;margin-top:14px;letter-spacing:.2px}
+.panel{background:var(--deep);padding:26px 30px;margin-top:24px;border-left:3px solid var(--sun)}
+.panel-l{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px;font-weight:600}
+.panel-h{font-family:var(--font-display);font-size:20px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:10px}
+.panel-b{font-size:13px;color:var(--text-white-dim);line-height:1.75;max-width:780px}
+
+.pull{font-family:var(--font-display);font-size:clamp(20px,2.6vw,30px);font-style:italic;font-weight:400;color:var(--coral);line-height:1.4;margin:30px 0 0;max-width:720px}
+.pull-white{color:var(--sun)}
+
+/* hero — gradient wash, heavy left, clear right */
+#s1{background-image:var(--img-hero);background-size:cover;background-position:center}
+#s1::before{content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,
+    rgba(253,252,250,.50) 0%,
+    rgba(253,252,250,.30) 34%,
+    rgba(253,252,250,.10) 60%,
+    rgba(253,252,250,.04) 100%)}
+#s1 .corner{color:#fff;text-shadow:0 1px 10px rgba(14,53,64,.8)}
+#s1 .scroll-hint{color:#fff;text-shadow:0 1px 10px rgba(14,53,64,.8)}
+#s1 .cover-hl{color:#fff;text-shadow:0 2px 20px rgba(14,53,64,.7),0 1px 4px rgba(14,53,64,.5)}
+#s1 .cover-hl span{color:var(--sun)}
+#s1 .subhead{color:#fff;text-shadow:0 1px 12px rgba(14,53,64,.75),0 1px 3px rgba(14,53,64,.5)}
+#s1 .partner-tag{color:#fff;border-color:rgba(255,255,255,.5)}
+
+#s-nights{background-image:var(--img-nights);background-size:cover;background-position:center}
+#s-nights::before{content:'';position:absolute;inset:0;background:rgba(14,53,64,.50);z-index:1}
+
+@media(max-width:768px){
+  .section{padding:46px 24px;min-height:auto}
+  .headline{font-size:31px} .cover-hl{font-size:42px} .cover-year{font-size:46px}
+  .cover-wrap{grid-template-columns:1fr;gap:30px}
+  .cover-right{border-left:none;border-top:var(--border-sun);padding-left:0;padding-top:24px;flex-direction:row;gap:30px;flex-wrap:wrap}
+  .grid.g2,.grid.g3,.days{grid-template-columns:1fr}
+  .optgrid,.closing-wrap{grid-template-columns:1fr;gap:18px}
+  table.t{display:block;overflow-x:auto}
+  .corner,.scroll-hint{display:none}
+  .nav-dots{right:9px;gap:7px}
+}
+@media(min-width:769px) and (max-width:1024px){
+  .section{padding:52px 44px}
+  .grid.g3,.days{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+
+<div class="proposal">
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- ══ 1 · COVER ══  bg: images/hero.jpg -->
+<section class="section s-cream" id="s1">
+  <div class="corner">SOMABAY SAILING WEEK · 2027</div>
+  <div class="content">
+    <div class="cover-wrap">
+      <div>
+        <div class="partner-tag">Concept &amp; Alignment</div>
+        <div class="cover-hl">SOMABAY<span>SAILING WEEK</span></div>
+        <div class="divider" style="margin-top:20px"></div>
+      <div class="subhead" style="max-width:530px">The next step for the Somabay Sailing Festival. Five days of racing, wind sports, food, music and sea — across the whole destination.</div>      </div>
+      <div class="cover-right">
+        <div class="cover-year">2027</div>
+        <div class="cover-badge">Red Sea Sails<br>×<br>SOMABAY</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ══ 2 · THE MODEL ══  videos/video-1.mp4 · videos/video-2.mp4 -->
+<section class="section s-cream" id="s2">
+  <div class="corner">01 · The Model</div>
+  <div class="content">
+    <div class="eyebrow eyebrow-sun">01 · The Model</div>
+    <div class="headline">Warm Water. Trade Winds. <em>Serious Fun.</em></div>
+    <div class="divider divider-turq"></div>
+    <div class="subhead">Racing by day, food and music by night, a destination that fills up because of it — the warm-water regatta is a proven format. The Red Sea has the water, the wind and the venue for it, and SSF 2026 showed it works. This is how big it gets.</div>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="img-ph" style="min-height:300px">
+        <video src="videos/video-1.mp4" controls muted loop playsinline preload="metadata"
+          onloadedmetadata="this.currentTime=46"
+          onseeked="this.dataset.r||(this.dataset.r=1)"
+          onplay="if(!this.dataset.p){this.dataset.p=1;this.currentTime=45}"
+          onerror="this.remove()"></video>
+        <div class="ref">Reference · St. Maarten Heineken Regatta</div>
+        <div class="img-ph-id">videos/video-1.mp4</div><div class="img-ph-label">Video</div>
+        <div class="img-ph-note">Heineken Regatta highlights</div>
+      </div>
+      <div class="img-ph" style="min-height:300px">
+        <video src="videos/video-2.mp4" controls muted loop playsinline preload="metadata"
+         onloadedmetadata="this.currentTime=105"
+         onplay="if(!this.dataset.p){this.dataset.p=1;this.currentTime=105}"
+         onerror="this.remove()"></video>
+        <div class="ref">Reference · Antigua Sailing Week</div>
+        <div class="img-ph-id">videos/video-2.mp4</div><div class="img-ph-label">Video</div>
+        <div class="img-ph-note">Antigua or BVI Spring Regatta</div>
+      </div>
+    </div>
+
+    <table class="t">
+      <tr><th>Event</th><th>Where</th><th>Boats</th><th>Reach</th><th>What it is</th></tr>
+      <tr class="hl">
+        <td class="k">St. Maarten<br>Heineken Regatta</td><td>Sint Maarten</td><td class="n">100–250</td><td class="n">20,000+</td>
+        <td>Four days. Sailors from 37 countries. Racing by day, international acts and beach parties by night. The largest warm-water regatta in the world — motto: "Serious Fun."</td>
+      </tr>
+      <tr>
+        <td class="k">Antigua<br>Sailing Week</td><td>Antigua</td><td class="n">100–200</td><td class="n">5,000</td>
+        <td>Running since 1967. A full week, 1,500 participants, 24 countries. Known as much for its parties as its racing.</td>
+      </tr>
+      <tr>
+        <td class="k">BVI Spring Regatta<br>&amp; Sailing Festival</td><td>Tortola, BVI</td><td class="n">130+</td><td class="n">15 countries</td>
+        <td>A sailing festival wrapped around a regatta. Their own words: hot racing, cool parties.</td>
+      </tr>
+    </table>
+    <div class="note">Sources: heinekenregatta.com, Antigua Sailing Week, BVI Spring Regatta. For scale, Europe's Kiel Week and Cowes Week run at 1,000–2,000 boats.</div>
+    <div class="pull">The Caribbean has a dozen of these. The Red Sea has none. That is the whole opportunity.</div>
+  </div>
+</section>
+
+<!-- ══ 3 · THE DAYS ══ -->
+<section class="section s-sand" id="s-days">
+  <div class="corner">02 · The Week</div>
+  <div class="content">
+    <div class="eyebrow eyebrow-sun">02 · The Week</div>
+    <div class="headline">Five Days <em>That Build.</em></div>
+    <div class="divider divider-turq"></div>
+    <div class="subhead">Boats arrive over the days before. Racing stays compact so skippers don't lose a working week. The festival wraps around it — opening with a fleet arrival, peaking on Festival Day, closing with the Somabay Cup.</div>
+
+    <div class="days">
+      <div class="day"><div class="day-b">
+        <div class="day-n">Day 0–1</div>
+        <div class="day-t">Arrival &amp; Opening</div>
+        <div class="day-x">The fleet lands and rigs on the beach. The passage fleet sails in from El Gouna. Opening ceremony on the dock, then the first big night.</div>
+        <div class="day-tag">Arrivals · Feeder · Opening party</div>
+      </div></div>
+      <div class="day"><div class="day-b">
+        <div class="day-n">Day 2–3</div>
+        <div class="day-t">Racing &amp; Demo Day</div>
+        <div class="day-x">Cruisers offshore, dinghies racing in front of the beach. Anyone can try sailing, wing or kite. Village and yacht showcase open.</div>
+        <div class="day-tag">Racing · Try-sailing · Village</div>
+      </div></div>
+      <div class="day day-peak"><div class="day-b">
+        <div class="day-n">Day 4 · Festival Day</div>
+        <div class="day-t">Everything at Once</div>
+        <div class="day-x">No scored racing. Every class on the water together — sail, kite, wing, windsurf. Village at full strength, families on the beach, music on the sand.</div>
+        <div class="day-tag">Parade · Public peak</div>
+      </div></div>
+      <div class="day"><div class="day-b">
+        <div class="day-n">Day 5</div>
+        <div class="day-t">Finals &amp; the Cup</div>
+        <div class="day-x">Short finals close to shore. The Somabay Cup and the closing party — the biggest night of the week.</div>
+        <div class="day-tag">Finals · Cup · Closing</div>
+      </div></div>
+      <div class="day"><div class="day-b">
+        <div class="day-n">Every day</div>
+        <div class="day-t">The Village</div>
+        <div class="day-x">Food, vendors, talks, young sailors, brand activations and live music. What keeps the 95% who aren't racing here all week.</div>
+        <div class="day-tag">Food · Talks · Music</div>
+      </div></div>
+      <div class="day"><div class="day-b">
+        <div class="day-n">Every night</div>
+        <div class="day-t">A Different Venue</div>
+        <div class="day-x">Barbouni, Kaktus, Wyte, the marina — the after-party moves. The week tours the destination instead of parking in one bar.</div>
+        <div class="day-tag">Beach nights · Prizegivings</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 4 · THE NIGHTS ══  bg: images/nights.jpg -->
+<section class="section s-deep" id="s-nights">
+  <div class="corner corner-white">03 · Beyond the Racing</div>
+  <div class="content">
+    <div class="eyebrow eyebrow-white">03 · Beyond the Racing</div>
+    <div class="headline headline-white">Food, Music, <em>and the Sea.</em></div>
+    <div class="divider divider-sun"></div>
+    <div class="subhead subhead-white">The nights, the food and the village are what turn a regatta into a week people don't want to leave — and it's the part Somabay is built for. The racing is the backdrop.</div>
+    <div class="grid g3" style="margin-top:28px">
+      <div class="card card-deep"><div class="card-title card-title-white">Nights that move</div><div class="card-body card-body-white">A different Somabay outlet each evening. Opening party on the dock, six nights later the closing party and the Cup.</div></div>
+      <div class="card card-deep"><div class="card-title card-title-white">Food &amp; music</div><div class="card-body card-body-white">Local kitchens, a stage from afternoon into the evening, dance — the kind of night people come back for.</div></div>
+      <div class="card card-deep"><div class="card-title card-title-white">Come and try</div><div class="card-body card-body-white">Free demo sailing, wing and kite on the beach. The entry point for anyone who's never been on the water.</div></div>
+    </div>
+
+    <div class="pull pull-white">For most people, the nights are the event. This is what we're best placed to do.</div>
+  </div>
+</section>
+
+<!-- ══ 5 · WHO COMES ══ -->
+<section class="section s-cream" id="s5">
+  <div class="corner">04 · Who Comes</div>
+  <div class="content">
+    <div class="eyebrow eyebrow-sun">04 · Who Comes</div>
+    <div class="headline">The Fleet, <em>and Who We Invite.</em></div>
+    <div class="divider divider-turq"></div>
+    <div class="subhead">Numbers we can stand behind on the water. The spectator figure is one to build with you off Somabay occupancy rather than guess.</div>
+
+    <table class="t">
+      <tr><th>On the water</th><th>2026</th><th>2027</th><th>Where from</th></tr>
+      <tr>
+        <td class="k">Cruising yachts</td><td>15</td><td class="n">25–30</td>
+        <td>El Gouna, Hurghada, Abydos and Cairo owners, plus yachts wintering in the Red Sea before the transit north.</td>
+      </tr>
+      <tr>
+        <td class="k">Dinghies &amp;<br>windsurfers</td><td>9</td><td class="n">25–40</td>
+        <td>Federation squads and club fleets — the class that scales fastest.</td>
+      </tr>
+      <tr class="hl">
+        <td class="k">Spectator fleet</td><td>—</td><td class="n">New</td>
+        <td>Motor yachts and guest boats at anchor along the course — close-up viewing and hosting. The shot that makes the week look like an event.</td>
+      </tr>
+    </table>
+
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <div class="card-title">Invited — Egypt</div>
+        <div class="card-body">Sailing and yacht clubs from Cairo, Alexandria, El Gouna and Hurghada · Federation squads and junior teams · brokers and dealers · marina and charter operators · marine trade and press · Somabay residents.</div>
+      </div>
+      <div class="card card-coral">
+        <div class="card-title">Invited — International</div>
+        <div class="card-body">Clubs and cruising associations from Turkey, Greece and Cyprus · Italian, French and Northern European sailing communities · international brokers, yacht brands and marine industry · charter companies · sailing media · guest sailors and Olympic-class names.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-l">The showcase</div>
+      <div class="panel-h">A boat show inside the week.</div>
+      <div class="panel-b">FX Yachting joins with its fleet — and this is why the timing matters: those yachts are in the Red Sea in March, heading north, and gone by May. Alongside them, Red Sea Sails brings Hanse, Fountaine Pajot, Lagoon and X-Yachts, with Felix Maritime as technical partner — boats in the water, booths on the dock, sea trials through the week. A yacht buyer and a Somabay property buyer are frequently the same person; the showcase puts both in front of the same audience.</div>    </div>
+  </div>
+</section>
+
+<!-- ══ 6 · YOUR CALL ══ -->
+<section class="section s-deep-mid" id="s6">
+  <div class="corner corner-white">05 · Your Call</div>
+  <div class="content">
+    <div class="eyebrow eyebrow-white">05 · Your Call</div>
+    <div class="headline headline-white">Two Decisions. <em>Then We Build.</em></div>
+    <div class="divider divider-sun"></div>
+    <div class="subhead subhead-white">Not budget, not detail — direction. Once these are settled we build the programme and go to partners together.</div>
+
+    <div style="background:var(--deep);padding:22px 26px;margin-top:24px;border-left:3px solid var(--sun)">
+      <div class="panel-l" style="margin-bottom:6px">Decision one</div>
+      <div style="font-family:var(--font-display);font-size:22px;font-weight:700;color:#fff;line-height:1.3">Do we extend the festival into a full week?</div>
+    </div>
+
+    <div class="panel-l" style="margin:24px 0 0;color:rgba(255,255,255,.55)">Decision two — the window</div>
+    <div class="optgrid">
+      <div class="opt">
+        <div class="opt-head">
+        <div class="opt-tag">Option A</div>
+        <div class="opt-date">23–28<br>March</div>
+        <div class="opt-anchor">Into the European Easter break</div>
+      </div>
+        <div class="opt-body"><ul>
+          <li>Catches the bluewater fleet heading north through the Red Sea before the Suez transit — gone by May</li>
+          <li>A rally brings a fleet up the coast to Egypt in late March; SSW right after gives them a reason to stay</li>
+          <li>FX Yachting's fleet is in the Red Sea in March, not May — their boats can be part of the experience</li>
+          <li>Shoulder season — fills a quiet week rather than a full one</li>
+        </ul></div>
+      </div>
+      <div class="opt opt-coral">
+        <div class="opt-head">
+          <div class="opt-tag">Option B</div>
+          <div class="opt-date">Eid<br>al-Adha</div>
+          <div class="opt-anchor">Mid-May, subject to the lunar calendar</div>
+        </div>
+        <div class="opt-body"><ul>
+          <li>FX Yachting's luxury fleet is in the Red Sea in March, not May — their yachts are essential to the experience</li>
+          <li>A rally brings a fleet up the coast to Egypt that same window — a chance to have them stop and stay for the week</li>
+          <li>Kicks off the marine season — and puts Somabay's new marina in front of the world the moment it opens</li>        </ul></div>
+      </div>
+    </div>
+    <div class="note" style="color:rgba(255,255,255,.55)">Both sit against long holidays. We'd want to check either against Somabay's own calendar before fixing anything.</div>
+
+    <div class="closing-wrap" style="margin-top:34px">
+      <div>
+        <div class="panel-l" style="color:rgba(255,255,255,.55);margin-bottom:12px">If it's a yes</div>
+        <div class="step"><div class="step-circle">1</div><div class="step-text" style="color:var(--text-white-dim)">A working session to settle format and window.</div></div>
+        <div class="step"><div class="step-circle">2</div><div class="step-text" style="color:var(--text-white-dim)">Build the programme — racing, village, nights, invitations.</div></div>
+        <div class="step"><div class="step-circle">3</div><div class="step-text" style="color:var(--text-white-dim)">Go to partners jointly, and announce early.</div></div>
+      </div>
+      <div>
+        <div class="contact-block" style="margin-top:0;background:rgba(233,161,59,.1);border-color:rgba(233,161,59,.35)">
+          <div class="c-row"><div class="c-label" style="color:rgba(255,255,255,.5)">Contact</div><div class="c-val" style="color:#fff">Mo Hammoud · Red Sea Sails</div></div>
+          <div class="c-row"><div class="c-label" style="color:rgba(255,255,255,.5)">Email</div><div class="c-val"><a href="mailto:mo@redseasails.com" style="color:var(--sun)">mo@redseasails.com</a></div></div>
+          <div class="c-row"><div class="c-label" style="color:rgba(255,255,255,.5)">Phone</div><div class="c-val"><a href="tel:+201206560777" style="color:var(--sun)">+20 120 656 0777</a></div></div>
+          <div class="c-row" style="margin-bottom:0"><div class="c-label" style="color:rgba(255,255,255,.5)"></div><div class="c-val"><a href="tel:+201270247317" style="color:var(--sun)">+20 127 0247 317</a></div></div>        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<script>
+(function(){
+  var s=document.querySelectorAll('.section'),n=document.getElementById('navDots');
+  s.forEach(function(el,i){var d=document.createElement('div');d.className='nav-dot'+(i?'':' active');
+    d.onclick=function(){el.scrollIntoView({behavior:'smooth'})};n.appendChild(d)});
+  var dots=n.querySelectorAll('.nav-dot');
+  if('IntersectionObserver' in window){
+    var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      var i=[].indexOf.call(s,e.target);dots.forEach(function(d,j){d.classList.toggle('active',j===i)})}})},{threshold:.5});
+    s.forEach(function(el){o.observe(el)});
+  }
+  document.querySelectorAll('.img-ph').forEach(function(p){
+    if(!p.querySelector('img,video,iframe')){var r=p.querySelector('.ref'); if(r) r.remove();}
+  });
+})();
+</script>
+</html>
