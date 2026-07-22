@@ -2,21 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SOMABAY Sailing Week 2027 · Concept · Red Sea Sails</title>
+<title>Red Sea Sailing Week 2027 · Concept · Red Sea Sails</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════
    IMAGES — put files in a folder called "images" next to
-   this HTML, named exactly as shown on each placeholder.
-   Videos go in a "videos" folder. Missing files just stay
-   as placeholders — nothing breaks.
-
-   The whole pitch works with as few as 5 files:
-     images/hero.jpg     images/parade.jpg
-     images/nights.jpg   images/village.jpg
-     videos/video-1.mp4  videos/video-2.mp4
+   this HTML, named exactly as shown. Videos in "videos".
+   Missing files just stay as placeholders — nothing breaks.
+     images/hero.jpg   images/nights.jpg
+     videos/video-1.mp4   videos/video-2.mp4
    ═══════════════════════════════════════════════════════ */
 :root{
   --img-hero:     url('images/hero.jpg');
@@ -138,6 +134,8 @@ table.t tr.hl td{background:var(--sun-soft)}
 .partner-tag{display:inline-block;padding:6px 14px;border:var(--border-sun);font-size:10px;color:var(--sun);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:600}
 .cover-hl{font-family:var(--font-display);font-size:clamp(46px,6.4vw,72px);font-weight:700;color:var(--text-primary);line-height:1}
 .cover-hl span{color:var(--coral);display:block}
+.cover-host{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-top:16px;font-weight:500;
+  text-shadow:0 1px 10px rgba(14,53,64,.8)}
 
 .closing-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:52px;align-items:start}
 .step{display:flex;gap:16px;align-items:flex-start;padding:11px 0;border-bottom:var(--border)}
@@ -200,14 +198,16 @@ table.t tr.hl td{background:var(--sun-soft)}
 
 <!-- ══ 1 · COVER ══  bg: images/hero.jpg -->
 <section class="section s-cream" id="s1">
-  <div class="corner">SOMABAY SAILING WEEK · 2027</div>
+  <div class="corner">RED SEA SAILING WEEK · 2027</div>
   <div class="content">
     <div class="cover-wrap">
       <div>
         <div class="partner-tag">Concept &amp; Alignment</div>
-        <div class="cover-hl">SOMABAY<span>SAILING WEEK</span></div>
+        <div class="cover-hl">RED SEA<span>SAILING WEEK</span></div>
         <div class="divider" style="margin-top:20px"></div>
-      <div class="subhead" style="max-width:530px">The next step for the Somabay Sailing Festival. Five days of racing, wind sports, food, music and sea — across the whole destination.</div>      </div>
+        <div class="subhead" style="max-width:530px">The inaugural edition, hosted at Somabay. A week built around the Somabay Sailing Festival — racing, wind sports, food, music and sea across the whole destination.</div>
+        <div class="cover-host">Hosted at Somabay · 2027</div>
+      </div>
       <div class="cover-right">
         <div class="cover-year">2027</div>
         <div class="cover-badge">Red Sea Sails<br>×<br>SOMABAY</div>
@@ -224,13 +224,12 @@ table.t tr.hl td{background:var(--sun-soft)}
     <div class="eyebrow eyebrow-sun">01 · The Model</div>
     <div class="headline">Warm Water. Trade Winds. <em>Serious Fun.</em></div>
     <div class="divider divider-turq"></div>
-    <div class="subhead">Racing by day, food and music by night, a destination that fills up because of it — the warm-water regatta is a proven format. The Red Sea has the water, the wind and the venue for it, and SSF 2026 showed it works. This is how big it gets.</div>
+    <div class="subhead">Racing by day, food and music by night, a destination that fills up because of it — the warm-water regatta is a proven format. The Red Sea has the water, the wind and the venue, and in late March the bluewater fleet is still here before it transits north. The week runs on two pillars: the racing — which we'd propose naming the Somabay Marina Cup — and the Somabay Sailing Festival for everything public.</div>
     <div class="grid g2" style="margin-top:26px">
       <div class="img-ph" style="min-height:300px">
         <video src="videos/video-1.mp4" controls muted loop playsinline preload="metadata"
           onloadedmetadata="this.currentTime=46"
-          onseeked="this.dataset.r||(this.dataset.r=1)"
-          onplay="if(!this.dataset.p){this.dataset.p=1;this.currentTime=45}"
+          onplay="if(!this.dataset.p){this.dataset.p=1;this.currentTime=46}"
           onerror="this.remove()"></video>
         <div class="ref">Reference · St. Maarten Heineken Regatta</div>
         <div class="img-ph-id">videos/video-1.mp4</div><div class="img-ph-label">Video</div>
@@ -267,14 +266,29 @@ table.t tr.hl td{background:var(--sun-soft)}
   </div>
 </section>
 
-<!-- ══ 3 · THE DAYS ══ -->
+<!-- ══ 3 · THE WEEK ══ -->
 <section class="section s-sand" id="s-days">
   <div class="corner">02 · The Week</div>
   <div class="content">
     <div class="eyebrow eyebrow-sun">02 · The Week</div>
-    <div class="headline">Five Days <em>That Build.</em></div>
+    <div class="headline">One Week, <em>Two Named Events.</em></div>
     <div class="divider divider-turq"></div>
-    <div class="subhead">Boats arrive over the days before. Racing stays compact so skippers don't lose a working week. The festival wraps around it — opening with a fleet arrival, peaking on Festival Day, closing with the Somabay Cup.</div>
+    <div class="subhead">Red Sea Sailing Week is the umbrella. Inside it sit two named events — the Somabay Marina Cup for the racing, the Somabay Sailing Festival for everything public. The rule is simple: if it's raced, it's the Cup; if it's celebrated, it's the Festival.</div>
+
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card card-sun">
+        <div class="card-title">Red Sea Sailing Week</div>
+        <div class="card-body">The umbrella — the whole event, arrival to closing party. The brand that grows year on year.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Somabay Marina Cup</div>
+        <div class="card-body">The racing inside it — all classes, the trophy. <em style="color:var(--text-muted)">Working name, yours to confirm.</em> The sporting spine, and a showcase for the new marina.</div>      
+      </div>
+      <div class="card card-coral">
+        <div class="card-title">Somabay Sailing Festival</div>
+        <div class="card-body">The public celebration — parade, village, talks, demo day, nights and the closing party. The name Somabay already knows.</div>
+      </div>
+    </div>
 
     <div class="days">
       <div class="day"><div class="day-b">
@@ -287,46 +301,46 @@ table.t tr.hl td{background:var(--sun-soft)}
         <div class="day-n">Day 2–3</div>
         <div class="day-t">Racing &amp; Demo Day</div>
         <div class="day-x">Cruisers offshore, dinghies racing in front of the beach. Anyone can try sailing, wing or kite. Village and yacht showcase open.</div>
-        <div class="day-tag">Racing · Try-sailing · Village</div>
+        <div class="day-tag">The Cup · Racing</div>
       </div></div>
       <div class="day day-peak"><div class="day-b">
-        <div class="day-n">Day 4 · Festival Day</div>
+        <div class="day-n">Day 4 · Somabay Sailing Festival</div>
         <div class="day-t">Everything at Once</div>
         <div class="day-x">No scored racing. Every class on the water together — sail, kite, wing, windsurf. Village at full strength, families on the beach, music on the sand.</div>
-        <div class="day-tag">Parade · Public peak</div>
+        <div class="day-tag">Festival · Parade · Public peak</div>
       </div></div>
       <div class="day"><div class="day-b">
         <div class="day-n">Day 5</div>
         <div class="day-t">Finals &amp; the Cup</div>
-        <div class="day-x">Short finals close to shore. The Somabay Cup and the closing party — the biggest night of the week.</div>
-        <div class="day-tag">Finals · Cup · Closing</div>
+        <div class="day-x">Short finals close to shore. The Cup and the closing party — the biggest night of the week.</div>
+        <div class="day-tag">The Cup · Finals</div>
       </div></div>
       <div class="day"><div class="day-b">
         <div class="day-n">Every day</div>
         <div class="day-t">The Village</div>
         <div class="day-x">Food, vendors, talks, young sailors, brand activations and live music. What keeps the 95% who aren't racing here all week.</div>
-        <div class="day-tag">Food · Talks · Music</div>
+        <div class="day-tag">Somabay Sailing Festival</div>
       </div></div>
       <div class="day"><div class="day-b">
         <div class="day-n">Every night</div>
         <div class="day-t">A Different Venue</div>
         <div class="day-x">Barbouni, Kaktus, Wyte, the marina — the after-party moves. The week tours the destination instead of parking in one bar.</div>
-        <div class="day-tag">Beach nights · Prizegivings</div>
+        <div class="day-tag">Somabay Sailing Festival · Nights</div>
       </div></div>
     </div>
   </div>
 </section>
 
-<!-- ══ 4 · THE NIGHTS ══  bg: images/nights.jpg -->
+<!-- ══ 4 · THE FESTIVAL ══  bg: images/nights.jpg -->
 <section class="section s-deep" id="s-nights">
-  <div class="corner corner-white">03 · Beyond the Racing</div>
+  <div class="corner corner-white">03 · The Festival</div>
   <div class="content">
-    <div class="eyebrow eyebrow-white">03 · Beyond the Racing</div>
+    <div class="eyebrow eyebrow-white">03 · The Festival</div>
     <div class="headline headline-white">Food, Music, <em>and the Sea.</em></div>
     <div class="divider divider-sun"></div>
-    <div class="subhead subhead-white">The nights, the food and the village are what turn a regatta into a week people don't want to leave — and it's the part Somabay is built for. The racing is the backdrop.</div>
+    <div class="subhead subhead-white">The Somabay Sailing Festival is the public face of the week — the nights, the food and the village that turn a regatta into something people don't want to leave. It's the part Somabay is built for, and the name Somabay already owns. The racing is the backdrop.</div>
     <div class="grid g3" style="margin-top:28px">
-      <div class="card card-deep"><div class="card-title card-title-white">Nights that move</div><div class="card-body card-body-white">A different Somabay outlet each evening. Opening party on the dock, six nights later the closing party and the Cup.</div></div>
+      <div class="card card-deep"><div class="card-title card-title-white">Nights that move</div><div class="card-body card-body-white">A different Somabay outlet each evening. Opening party on the dock, then the closing party and the Cup.</div></div>
       <div class="card card-deep"><div class="card-title card-title-white">Food &amp; music</div><div class="card-body card-body-white">Local kitchens, a stage from afternoon into the evening, dance — the kind of night people come back for.</div></div>
       <div class="card card-deep"><div class="card-title card-title-white">Come and try</div><div class="card-body card-body-white">Free demo sailing, wing and kite on the beach. The entry point for anyone who's never been on the water.</div></div>
     </div>
@@ -374,37 +388,58 @@ table.t tr.hl td{background:var(--sun-soft)}
     <div class="panel">
       <div class="panel-l">The showcase</div>
       <div class="panel-h">A boat show inside the week.</div>
-      <div class="panel-b">FX Yachting joins with its fleet — and this is why the timing matters: those yachts are in the Red Sea in March, heading north, and gone by May. Alongside them, Red Sea Sails brings Hanse, Fountaine Pajot, Lagoon and X-Yachts, with Felix Maritime as technical partner — boats in the water, booths on the dock, sea trials through the week. A yacht buyer and a Somabay property buyer are frequently the same person; the showcase puts both in front of the same audience.</div>    </div>
+      <div class="panel-b">FX Yachting joins with its fleet — and this is why the timing matters: those yachts are in the Red Sea in March, heading north, and gone by May. Alongside them, Red Sea Sails brings Hanse, Fountaine Pajot, Lagoon and X-Yachts, with Felix Maritime as technical partner — boats in the water, booths on the dock, sea trials through the week. A yacht buyer and a Somabay property buyer are frequently the same person; the showcase puts both in front of the same audience.</div>
+    </div>
   </div>
 </section>
 
-<!-- ══ 6 · YOUR CALL ══ -->
-<section class="section s-deep-mid" id="s6">
-  <div class="corner corner-white">05 · Your Call</div>
+<!-- ══ 6 · WHAT SOMABAY GAINS ══ -->
+<section class="section s-sand-deep" id="s-gains">
+  <div class="corner">05 · The Return</div>
   <div class="content">
-    <div class="eyebrow eyebrow-white">05 · Your Call</div>
+    <div class="eyebrow eyebrow-sun">05 · The Return</div>
+    <div class="headline">What Somabay <em>Gains.</em></div>
+    <div class="divider divider-turq"></div>
+    <div class="subhead">The week isn't a cost centre with a party attached. It drives revenue across the destination, and puts the new marina in front of the world.</div>
+
+    <div class="grid g3" style="margin-top:28px">
+      <div class="card"><div class="card-title">Occupancy</div><div class="card-body">A full week of room nights across the resort's hotels — in a shoulder season the event fills rather than competes with.</div></div>
+      <div class="card"><div class="card-title">F&amp;B across the resort</div><div class="card-body">The village plus a different outlet every night activate every restaurant and bar, not just one.</div></div>
+      <div class="card card-sun"><div class="card-title">The new marina, launched</div><div class="card-body">The event showcases the new marina to an international audience the moment it opens — and builds berth demand behind it.</div></div>
+      <div class="card"><div class="card-title">Property leads</div><div class="card-body">A yacht buyer and a Somabay property buyer are frequently the same person. The showcase audience is your real-estate market.</div></div>
+      <div class="card card-coral"><div class="card-title">Name on the event</div><div class="card-body">A cup and the sailing festival would carry the destination's name — on the trophy, and on the public face of the week.</div></div>
+      <div class="card"><div class="card-title">Destination positioning</div><div class="card-body">490K+ media impressions in 2026, growing. Somabay becomes known as the Red Sea's sailing destination — an annual anchor.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7 · YOUR CALL ══ -->
+<section class="section s-deep-mid" id="s7">
+  <div class="corner corner-white">06 · Your Call</div>
+  <div class="content">
+    <div class="eyebrow eyebrow-white">06 · Your Call</div>
     <div class="headline headline-white">Two Decisions. <em>Then We Build.</em></div>
     <div class="divider divider-sun"></div>
     <div class="subhead subhead-white">Not budget, not detail — direction. Once these are settled we build the programme and go to partners together.</div>
 
     <div style="background:var(--deep);padding:22px 26px;margin-top:24px;border-left:3px solid var(--sun)">
       <div class="panel-l" style="margin-bottom:6px">Decision one</div>
-      <div style="font-family:var(--font-display);font-size:22px;font-weight:700;color:#fff;line-height:1.3">Do we extend the festival into a full week?</div>
+      <div style="font-family:var(--font-display);font-size:22px;font-weight:700;color:#fff;line-height:1.3">Do we grow the festival into a full Red Sea Sailing Week?</div>
     </div>
 
     <div class="panel-l" style="margin:24px 0 0;color:rgba(255,255,255,.55)">Decision two — the window</div>
     <div class="optgrid">
       <div class="opt">
         <div class="opt-head">
-        <div class="opt-tag">Option A</div>
-        <div class="opt-date">23–28<br>March</div>
-        <div class="opt-anchor">Into the European Easter break</div>
-      </div>
+          <div class="opt-tag">Option A</div>
+          <div class="opt-date">23–28<br>March</div>
+          <div class="opt-anchor">Into the European Easter break</div>
+        </div>
         <div class="opt-body"><ul>
-          <li>Catches the bluewater fleet heading north through the Red Sea before the Suez transit — gone by May</li>
-          <li>A rally brings a fleet up the coast to Egypt in late March; SSW right after gives them a reason to stay</li>
-          <li>FX Yachting's fleet is in the Red Sea in March, not May — their boats can be part of the experience</li>
-          <li>Shoulder season — fills a quiet week rather than a full one</li>
+          <li>FX Yachting's fleet is in the Red Sea in March, not May — we want their boats part of the experience</li>
+          <li>A bluewater rally brings a fleet up the coast to Egypt that same window — a chance to have them stop and stay for the week</li>
+          <li>The wider northbound fleet is still here before the Suez transit — by May it's gone</li>
+          <li>Kicks off the marine season — and puts Somabay's new marina in front of the world the moment it opens</li>
         </ul></div>
       </div>
       <div class="opt opt-coral">
@@ -414,9 +449,11 @@ table.t tr.hl td{background:var(--sun-soft)}
           <div class="opt-anchor">Mid-May, subject to the lunar calendar</div>
         </div>
         <div class="opt-body"><ul>
-          <li>FX Yachting's luxury fleet is in the Red Sea in March, not May — their yachts are essential to the experience</li>
-          <li>A rally brings a fleet up the coast to Egypt that same window — a chance to have them stop and stay for the week</li>
-          <li>Kicks off the marine season — and puts Somabay's new marina in front of the world the moment it opens</li>        </ul></div>
+          <li>One of the largest domestic audiences of the year, already on the destination</li>
+          <li>Continuity with 2026 — a similar window, one year on</li>
+          <li>Exact dates confirm late, which compresses the runway</li>
+          <li>The bluewater fleet has already transited north — it's gone by May</li>
+        </ul></div>
       </div>
     </div>
     <div class="note" style="color:rgba(255,255,255,.55)">Both sit against long holidays. We'd want to check either against Somabay's own calendar before fixing anything.</div>
@@ -433,7 +470,7 @@ table.t tr.hl td{background:var(--sun-soft)}
           <div class="c-row"><div class="c-label" style="color:rgba(255,255,255,.5)">Contact</div><div class="c-val" style="color:#fff">Mo Hammoud · Red Sea Sails</div></div>
           <div class="c-row"><div class="c-label" style="color:rgba(255,255,255,.5)">Email</div><div class="c-val"><a href="mailto:mo@redseasails.com" style="color:var(--sun)">mo@redseasails.com</a></div></div>
           <div class="c-row"><div class="c-label" style="color:rgba(255,255,255,.5)">Phone</div><div class="c-val"><a href="tel:+201206560777" style="color:var(--sun)">+20 120 656 0777</a></div></div>
-          <div class="c-row" style="margin-bottom:0"><div class="c-label" style="color:rgba(255,255,255,.5)"></div><div class="c-val"><a href="tel:+201270247317" style="color:var(--sun)">+20 127 0247 317</a></div></div>        
+          <div class="c-row" style="margin-bottom:0"><div class="c-label" style="color:rgba(255,255,255,.5)"></div><div class="c-val"><a href="tel:+201270247317" style="color:var(--sun)">+20 127 0247 317</a></div></div>
         </div>
       </div>
     </div>
