@@ -151,10 +151,12 @@ nav{position:sticky;top:0;z-index:50;background:rgba(9,22,38,.94);backdrop-filte
 footer{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:40px 0;font-size:14px;border-top:1px solid rgba(0,180,180,.2)}
 .foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 
+.card-grid.two{grid-template-columns:1fr 1fr}
 @media(max-width:900px){
   .hero{background:linear-gradient(180deg,rgba(9,22,38,.9) 0%,rgba(9,22,38,.7) 60%,rgba(10,77,92,.4) 100%),url('images/hero.jpg') 45% 70%/cover no-repeat,var(--grad-deep)}
   .nav-links{display:none}
-  .val-grid,.card-grid,.media,.fleet,.steps,.everyday{grid-template-columns:1fr}
+  .val-grid,.card-grid,.media,.fleet,.steps,.everyday,.venue,.card-grid.two{grid-template-columns:1fr}
+  .venue{gap:32px}
   .days{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr}
   .proof{padding:44px 28px}
@@ -304,7 +306,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:40px 0;fon
       <div class="card card-navy"><div class="n">30–50</div><h3>Dinghies &amp; wind sports</h3><p>Federation dinghy squads and the kite, wing and windsurf community.</p></div>
       <div class="card card-light"><div class="n">New</div><h3>Spectator fleet</h3><p>Motor yachts and guest boats at anchor along the course, for close-up viewing and hosting.</p></div>
     </div>
-    <div class="card-grid" style="grid-template-columns:1fr 1fr;margin-top:24px">
+    <div class="card-grid two" style="margin-top:24px">
       <div class="card card-light"><div class="tag">Invited · Egypt</div><h3>The home fleet</h3><p>Sailing and yacht clubs from Cairo, Alexandria, El Gouna and Hurghada. Federation squads and junior teams. Brokers, dealers, marina and charter operators, marine trade and press.</p></div>
       <div class="card card-light"><div class="tag">Invited · International</div><h3>The visiting fleet</h3><p>Clubs and cruising associations from Turkey, Greece and Cyprus. Italian, French and Northern European sailing communities. Yacht brands, brokers, charter companies and sailing media.</p></div>
     </div>
