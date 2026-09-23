@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Sea Sailing Week 2027 · Partnership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=Antonio:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d1f33;--navy-deep:#091626;
+  --teal:#00B4B4;--teal-dark:#008A8A;--teal-deep:#0a4d5c;
+  --gold:#c9a227;--gold-soft:#e3c96a;
+  --pearl:#f7f4ee;--ink:#1c2836;--ink-soft:#4d5a68;--line:#e2dccd;
+  --grad-deep:linear-gradient(135deg,#091626 0%,#0d2a44 45%,#0a4d5c 100%);
+  --grad-card:linear-gradient(160deg,#0f2640 0%,#103a52 60%,#0b5663 100%);
+  --grad-teal:linear-gradient(150deg,#00A3A6 0%,#008A8A 50%,#0a5f6b 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hanken Grotesk',sans-serif;background:var(--pearl);color:var(--ink);line-height:1.65;font-size:16px}
+h1,h2,h3{font-family:'Archivo',sans-serif;line-height:1.15}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+.eyebrow{font-family:'Archivo',sans-serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:14px}
+.dark .eyebrow,.hero .eyebrow{color:var(--gold-soft)}
+.section{padding:96px 0;position:relative;overflow:hidden}
+.white{background:#fff}
+.pearl{background:linear-gradient(180deg,#f7f4ee 0%,#eef4f3 100%)}
+.dark{background:var(--grad-deep);color:#fff}
+.section-head{max-width:700px;margin-bottom:48px}
+.section-head h2{font-size:clamp(28px,3.6vw,40px);font-weight:700;color:var(--navy)}
+.section-head p{margin-top:14px;color:var(--ink-soft);font-size:17px}
+.dark .section-head h2{color:#fff}
+.dark .section-head p{color:rgba(255,255,255,.78)}
+.glow{position:absolute;border-radius:50%;pointer-events:none;z-index:1}
+.glow-teal{background:radial-gradient(circle,rgba(0,180,180,.35) 0%,rgba(0,180,180,0) 70%)}
+.glow-gold{background:radial-gradient(circle,rgba(201,162,39,.28) 0%,rgba(201,162,39,0) 70%)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(9,22,38,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,180,180,.18)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.lockup{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-decoration:none}
+.lockup span{color:var(--teal)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--teal)}
+
+.hero{background:linear-gradient(100deg,rgba(9,22,38,.94) 0%,rgba(9,22,38,.55) 40%,rgba(10,77,92,.25) 100%),url('images/hero.jpg') 0% 72%/140% auto no-repeat,var(--grad-deep);color:#fff;padding:130px 0 110px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(38px,5.4vw,64px);font-weight:800;max-width:14ch}
+.hero h1 span{background:linear-gradient(90deg,var(--teal) 0%,#7fe0d8 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin-top:22px;max-width:52ch;color:rgba(255,255,255,.85);font-size:18px}
+.hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.host{margin-top:48px;display:flex;gap:28px;flex-wrap:wrap;font-family:'Antonio',sans-serif;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.host b{color:var(--gold-soft);font-weight:500}
+.waterline{position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal) 25%,var(--gold) 50%,var(--teal) 75%,transparent);z-index:3}
+.coords{position:absolute;right:24px;bottom:18px;font-family:'Antonio',sans-serif;font-size:13px;letter-spacing:.25em;color:rgba(255,255,255,.4);z-index:3}
+
+.btn{display:inline-block;font-family:'Archivo',sans-serif;font-weight:600;font-size:14px;letter-spacing:.04em;text-decoration:none;padding:14px 28px;border-radius:4px;border:0;transition:all .2s}
+.btn-gold{background:linear-gradient(135deg,#e3c96a 0%,#c9a227 100%);color:var(--navy-deep);box-shadow:0 8px 24px rgba(201,162,39,.3)}
+.btn-gold:hover,.btn-gold:focus-visible{transform:translateY(-1px);box-shadow:0 10px 28px rgba(201,162,39,.45)}
+.btn-ghost{border:1px solid rgba(0,180,180,.6);color:#fff}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:rgba(0,180,180,.15);border-color:var(--teal)}
+
+.media{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:56px}
+.media figure{border-radius:10px;overflow:hidden;background:var(--grad-card);box-shadow:0 20px 40px rgba(13,31,51,.18)}
+.media video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--navy)}
+.media figcaption{padding:14px 18px;font-family:'Antonio',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.media figcaption b{color:var(--teal);font-weight:500}
+
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.val-n{font-family:'Antonio',sans-serif;font-size:44px;font-weight:500;line-height:1;margin-bottom:14px;background:linear-gradient(90deg,var(--teal-dark) 0%,var(--teal) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.val-item h3{font-size:20px;font-weight:600;color:var(--navy)}
+.val-item p{margin-top:8px;color:var(--ink-soft);font-size:15px}
+.note{margin-top:32px;font-size:13px;color:var(--ink-soft);opacity:.8}
+.pull{margin-top:48px;padding:28px 32px;border-radius:10px;background:var(--grad-teal);color:#fff;font-family:'Archivo',sans-serif;font-size:clamp(20px,2.4vw,26px);font-weight:600;box-shadow:0 18px 40px rgba(0,138,138,.28)}
+
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{border-radius:10px;padding:34px 32px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px)}
+.card h3{font-size:23px;font-weight:600}
+.card p{margin-top:10px;font-size:15px}
+.tag{font-family:'Antonio',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.card-navy{background:var(--grad-card);color:#fff;box-shadow:0 18px 40px rgba(13,31,51,.22)}
+.card-navy::after{content:"";position:absolute;left:32px;right:32px;bottom:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--gold))}
+.card-navy .tag{color:var(--teal)}
+.card-navy p{color:rgba(255,255,255,.78)}
+.card-teal{background:var(--grad-teal);color:#fff;box-shadow:0 18px 40px rgba(0,138,138,.3)}
+.card-teal .tag{color:var(--gold-soft)}
+.card-teal p{color:rgba(255,255,255,.88)}
+.card-light{background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(13,31,51,.06)}
+.card-light h3{color:var(--navy)}
+.card-light .tag{color:var(--teal-dark)}
+.card-light p{color:var(--ink-soft)}
+.card-glass{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#fff;backdrop-filter:blur(6px)}
+.card-glass .tag{color:var(--teal)}
+.card-glass p{color:rgba(255,255,255,.78)}
+
+.venue{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.venue figure{border-radius:12px;overflow:hidden;box-shadow:0 24px 50px rgba(13,31,51,.22);position:relative}
+.venue img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover}
+.venue figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 20px 14px;background:linear-gradient(transparent,rgba(9,22,38,.85));font-family:'Antonio',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.venue figcaption b{color:var(--teal);font-weight:500}
+.spots{list-style:none}
+.spots li{padding:18px 0;border-bottom:1px solid var(--line)}
+.spots li:first-child{padding-top:0}
+.spots li:last-child{border-bottom:0}
+.spots h3{font-size:18px;font-weight:600;color:var(--navy)}
+.spots .tag{color:var(--teal-dark);margin-bottom:4px}
+.spots p{margin-top:4px;font-size:15px;color:var(--ink-soft)}
+.img-credit{position:absolute;right:24px;bottom:18px;z-index:3;font-family:'Antonio',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.day{background:#fff;border-radius:10px;padding:22px 20px;border-top:3px solid var(--teal);box-shadow:0 10px 26px rgba(13,31,51,.07)}
+.day .tag{color:var(--teal-dark)}
+.day h3{font-size:18px;font-weight:600;color:var(--navy)}
+.day p{margin-top:8px;font-size:14px;color:var(--ink-soft)}
+.day.peak{background:var(--grad-card);border-top-color:var(--gold)}
+.day.peak .tag{color:var(--gold-soft)}
+.day.peak h3{color:#fff}
+.day.peak p{color:rgba(255,255,255,.8)}
+.everyday{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+
+.band{background:linear-gradient(90deg,rgba(9,22,38,.92) 0%,rgba(10,77,92,.45) 60%,rgba(0,180,180,.15) 100%),url('images/nights.jpg') center/cover no-repeat,var(--grad-deep);color:#fff;padding:150px 0;position:relative;overflow:hidden}
+.band h2{font-size:clamp(38px,5.4vw,64px);font-weight:800}
+.band p{margin-top:18px;max-width:50ch;color:rgba(255,255,255,.85);font-size:18px}
+
+.fleet{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fleet .card{padding:30px 28px}
+.fleet .n{font-family:'Antonio',sans-serif;font-size:48px;font-weight:500;line-height:1;margin-bottom:10px;color:var(--gold-soft)}
+.fleet .card-light .n{background:linear-gradient(90deg,var(--teal-dark),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.proof{background:var(--grad-deep);border-radius:16px;padding:64px 56px;color:#fff;position:relative;overflow:hidden;box-shadow:0 30px 60px rgba(9,22,38,.3)}
+.proof h2{font-size:clamp(28px,3.6vw,40px);font-weight:700;position:relative;z-index:2}
+.proof>p{margin-top:14px;color:rgba(255,255,255,.8);max-width:58ch;position:relative;z-index:2}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:44px;padding-top:40px;border-top:1px solid rgba(0,180,180,.3);position:relative;z-index:2}
+.stat b{display:block;font-family:'Antonio',sans-serif;font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.05;background:linear-gradient(90deg,var(--gold-soft),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:8px;display:block}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-n{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--grad-teal);color:#fff;font-family:'Antonio',sans-serif;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,138,138,.35)}
+.step h3{font-size:18px;font-weight:600;color:#fff}
+.step p{margin-top:4px;font-size:15px;color:rgba(255,255,255,.75)}
+.c-card{margin-top:48px;border-radius:12px;padding:36px 40px;background:rgba(255,255,255,.06);border:1px solid rgba(0,180,180,.35);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.c-card h3{font-size:22px;font-weight:600;color:#fff}
+.c-card .role{color:rgba(255,255,255,.65);font-size:14px;margin-top:2px}
+.c-links{display:flex;gap:28px;flex-wrap:wrap}
+.c-links a{color:var(--teal);font-weight:600;text-decoration:none}
+.c-links a:hover,.c-links a:focus-visible{color:var(--gold-soft)}
+
+footer{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:40px 0;font-size:14px;border-top:1px solid rgba(0,180,180,.2)}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero{background:linear-gradient(180deg,rgba(9,22,38,.9) 0%,rgba(9,22,38,.7) 60%,rgba(10,77,92,.4) 100%),url('images/hero.jpg') 45% 70%/cover no-repeat,var(--grad-deep)}
+  .nav-links{display:none}
+  .val-grid,.card-grid,.media,.fleet,.steps,.everyday{grid-template-columns:1fr}
+  .days{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .proof{padding:44px 28px}
+  .section{padding:68px 0}
+  .band{padding:100px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMZL9R9H7D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DMZL9R9H7D');</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="lockup" href="#top">Red Sea <span>Sailing Week</span></a>
+    <ul class="nav-links">
+      <li><a href="#model">The model</a></li>
+      <li><a href="#venue">The venue</a></li>
+      <li><a href="#week">The week</a></li>
+      <li><a href="#who">Who comes</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="glow glow-teal" style="width:620px;height:620px;right:-160px;top:-180px"></div>
+  <div class="wrap">
+    <div class="eyebrow">Partnership 2027</div>
+    <h1>The Red Sea's first <span>sailing week.</span></h1>
+    <p>Five days of racing, wind sports, food and music across the whole of Somabay. Built on the Somabay Sailing Festival, which launched in 2026, and grown into a full week.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#contact">Become a partner</a>
+      <a class="btn btn-ghost" href="#week">See the week</a>
+    </div>
+    <div class="host"><span>Hosted at <b>Somabay</b></span><span>Spring 2027</span><span>Organised by <b>Red Sea Sails</b></span></div>
+  </div>
+  <div class="coords">26°51'N&nbsp;&nbsp;33°59'E</div>
+  <div class="waterline"></div>
+</header>
+
+<section class="section white" id="model">
+  <div class="glow glow-teal" style="width:520px;height:520px;left:-220px;top:40px;opacity:.5"></div>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The model</div>
+      <h2>Warm water. Steady wind. Serious fun.</h2>
+      <p>Racing by day, food and music by night, and a destination that fills up because of it. The warm-water regatta is a proven format, and Somabay has the water, the wind and the venue to run it.</p>
+    </div>
+    <div class="media">
+      <figure><video src="videos/video-1.mp4" controls muted loop playsinline preload="metadata" onloadedmetadata="this.currentTime=2"></video><figcaption><b>Reference</b> &nbsp;St. Maarten Heineken Regatta</figcaption></figure>
+      <figure><video src="videos/video-2.mp4" controls muted loop playsinline preload="metadata" onloadedmetadata="this.currentTime=105"></video><figcaption><b>Reference</b> &nbsp;Antigua Sailing Week</figcaption></figure>
+    </div>
+    <div class="val-grid">
+      <div class="val-item"><div class="val-n">100–250</div><h3>St. Maarten Heineken Regatta</h3><p>Boats each year, sailors from 37 countries. Four days of racing by day and international acts by night. The largest warm-water regatta in the world.</p></div>
+      <div class="val-item"><div class="val-n">1,500</div><h3>Antigua Sailing Week</h3><p>Participants from 24 countries, running since 1967. A full week, known as much for its parties as its racing.</p></div>
+      <div class="val-item"><div class="val-n">130+</div><h3>BVI Spring Regatta</h3><p>Boats from 15 countries. A sailing festival wrapped around a regatta: hot racing, cool parties.</p></div>
+    </div>
+    <div class="note">Sources: heinekenregatta.com, Antigua Sailing Week, BVI Spring Regatta. For scale, Europe's Kiel Week and Cowes Week run at 1,000–2,000 boats.</div>
+    <div class="pull">The Caribbean has a dozen of these. The Red Sea has none. That is the opportunity.</div>
+  </div>
+</section>
+
+<section class="section pearl" id="venue">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The venue</div>
+      <h2>One destination. Every venue in play.</h2>
+      <p>Somabay's marina is the hub of the week, with the beach clubs, hotels and restaurants around it as satellites, all linked by boardwalk and shuttle. Sailors, guests and partners never leave the destination.</p>
+    </div>
+    <div class="venue">
+      <figure><img src="images/marina.jpg" alt="Rendering of Somabay Marina and the surrounding resort"><figcaption><b>Somabay Marina</b> &nbsp;Rendering</figcaption></figure>
+      <ul class="spots">
+        <li><div class="tag">The hub</div><h3>Somabay Marina</h3><p>The sailing village, the yacht showcase and the cruiser fleet, all on the dock.</p></li>
+        <li><div class="tag">The course</div><h3>Barbouni Beach Club</h3><p>Dinghy and windsurf racing close to shore, in full view of the beach.</p></li>
+        <li><div class="tag">Wind sports</div><h3>Wyte and The Kaktus Somabay</h3><p>Kite, wing and windsurf, demo sessions and the sports crowd.</p></li>
+        <li><div class="tag">The nights</div><h3>Across the resort</h3><p>A different venue every evening, from the opening party to the Cup.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="week">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The week</div>
+      <h2>One week. Three things happening at once.</h2>
+      <p>Red Sea Sailing Week is the umbrella, from arrival to closing party. Inside it: the racing, the public festival and a boat show. If it's raced, it's the Cup. If it's celebrated, it's the Festival.</p>
+    </div>
+    <div class="card-grid">
+      <article class="card card-navy"><div class="tag">Racing</div><h3>The Cup</h3><p>All classes, from cruising yachts offshore to dinghies and windsurfers in front of the beach. One overall trophy, awarded on the final night.</p></article>
+      <article class="card card-teal"><div class="tag">Public</div><h3>The Festival</h3><p>The Somabay Sailing Festival. A parade of wind sports, a sailing village, free demo sessions and a different party every night.</p></article>
+      <article class="card card-navy"><div class="tag">Marine industry</div><h3>The Showcase</h3><p>A boat show inside the week. Yachts in the water, brands on the dock and sea trials through the week.</p></article>
+    </div>
+    <div class="days">
+      <div class="day"><div class="tag">Day 1</div><h3>Arrival &amp; opening</h3><p>The passage fleet sails in from Egypt's marinas. Dinghies rig on the beach. Opening ceremony on the dock, then the first big night.</p></div>
+      <div class="day"><div class="tag">Day 2</div><h3>Racing</h3><p>Cruisers offshore. Dinghies and windsurfers race close to shore, in full view of the beach.</p></div>
+      <div class="day"><div class="tag">Day 3</div><h3>Racing &amp; demo day</h3><p>Racing continues. Anyone can try sailing, wing or kite. Village and showcase open.</p></div>
+      <div class="day peak"><div class="tag">Day 4 · Peak</div><h3>Festival Day</h3><p>No scored racing. Every class on the water together. Families on the beach, music on the sand.</p></div>
+      <div class="day"><div class="tag">Day 5</div><h3>Finals &amp; the Cup</h3><p>Short finals close to shore. Prizegiving and the closing party, the biggest night of the week.</p></div>
+    </div>
+    <div class="everyday">
+      <div class="card card-light"><div class="tag">Every day</div><h3>The village</h3><p>Food, vendors, talks, young sailors, brand activations and live music. It keeps the people who aren't racing here all week.</p></div>
+      <div class="card card-light"><div class="tag">Every night</div><h3>A different venue</h3><p>Barbouni, The Kaktus, Wyte and the marina. The party moves each night, so the week tours the destination instead of staying in one bar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="glow glow-teal" style="width:700px;height:700px;right:-200px;bottom:-300px"></div>
+  <div class="img-credit">Reference image</div>
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold-soft)">Day 4 · Festival Day</div>
+    <h2>Everything on the water at once.</h2>
+    <p>Sail, kite, wing and windsurf together in one parade. Cruisers processing under sail, the village at full strength, the whole destination out on the beach. The biggest crowd of the week, and the day with the most to photograph.</p>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="glow glow-gold" style="width:500px;height:500px;left:-180px;top:-120px"></div>
+  <div class="glow glow-teal" style="width:600px;height:600px;right:-200px;bottom:-240px"></div>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The festival</div>
+      <h2>Food, music and the sea.</h2>
+      <p>The Somabay Sailing Festival is the public face of the week. The racing is the backdrop. For most people, the nights are the event.</p>
+    </div>
+    <div class="card-grid">
+      <article class="card card-glass"><div class="tag">Nights</div><h3>Nights that move</h3><p>A different Somabay venue each evening. Opening party on the dock, closing party with the Cup.</p></article>
+      <article class="card card-glass"><div class="tag">Stage</div><h3>Food and music</h3><p>Local kitchens and a stage running from afternoon into the night. The kind of evening people come back for.</p></article>
+      <article class="card card-glass"><div class="tag">Beach</div><h3>Come and try</h3><p>Free demo sailing, wing and kite on the beach. The way in for anyone who has never been on the water.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Who comes</div>
+      <h2>On the water, and on the beach.</h2>
+      <p>Skippers, crews, yacht buyers and the marine trade on the water. Residents, hotel guests and families on shore.</p>
+    </div>
+    <div class="fleet">
+      <div class="card card-navy"><div class="n">25–30</div><h3>Cruising yachts</h3><p>El Gouna, Hurghada and Cairo skippers, plus yachts wintering in the Red Sea.</p></div>
+      <div class="card card-navy"><div class="n">30–50</div><h3>Dinghies &amp; wind sports</h3><p>Federation dinghy squads and the kite, wing and windsurf community.</p></div>
+      <div class="card card-light"><div class="n">New</div><h3>Spectator fleet</h3><p>Motor yachts and guest boats at anchor along the course, for close-up viewing and hosting.</p></div>
+    </div>
+    <div class="card-grid" style="grid-template-columns:1fr 1fr;margin-top:24px">
+      <div class="card card-light"><div class="tag">Invited · Egypt</div><h3>The home fleet</h3><p>Sailing and yacht clubs from Cairo, Alexandria, El Gouna and Hurghada. Federation squads and junior teams. Brokers, dealers, marina and charter operators, marine trade and press.</p></div>
+      <div class="card card-light"><div class="tag">Invited · International</div><h3>The visiting fleet</h3><p>Clubs and cruising associations from Turkey, Greece and Cyprus. Italian, French and Northern European sailing communities. Yacht brands, brokers, charter companies and sailing media.</p></div>
+    </div>
+    <div class="card card-teal" style="margin-top:24px">
+      <div class="tag">The showcase</div>
+      <h3>A boat show inside the week.</h3>
+      <p>Red Sea Sails brings Hanse, Fountaine Pajot, Lagoon and X-Yachts, alongside FX Yachting's fleet and Felix Maritime as technical partner. Boats in the water, booths on the dock and sea trials through the week, in front of an audience that buys yachts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section pearl">
+  <div class="wrap">
+    <div class="proof">
+      <div class="glow glow-teal" style="width:520px;height:520px;right:-160px;top:-200px"></div>
+      <div class="glow glow-gold" style="width:380px;height:380px;left:-140px;bottom:-200px"></div>
+      <div class="eyebrow" style="color:var(--teal);position:relative;z-index:2">2026 edition</div>
+      <h2>Built on a proven first edition.</h2>
+      <p>The Somabay Sailing Festival ran in May 2026. Yachts sailed down from El Gouna and Hurghada, dinghies and windsurfers raced off the beach, and the coverage travelled well beyond the event. Year two runs longer and bigger.</p>
+      <div class="stats">
+        <div class="stat"><b>490K+</b><span>Media impressions</span></div>
+        <div class="stat"><b>80+</b><span>Sailors</span></div>
+        <div class="stat"><b>15</b><span>Cruising yachts</span></div>
+        <div class="stat"><b>3 → 5</b><span>Days, 2026 to 2027</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="value">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">For partners</div>
+      <h2>Your brand, on the water.</h2>
+      <p>A high-value audience that's hard to reach anywhere else, in one place for a full week, and content that keeps working long after it.</p>
+    </div>
+    <div class="card-grid">
+      <article class="card card-light"><div class="tag">Audience</div><h3>Who you reach</h3><p>Yacht owners and skippers, buyers and brokers, and Somabay's resident and guest base.</p></article>
+      <article class="card card-navy"><div class="tag">Peak moment</div><h3>Festival Day</h3><p>Every class on the water at once. The biggest crowd of the week, and the image that sells the next edition.</p></article>
+      <article class="card card-light"><div class="tag">Naming</div><h3>Your name on it</h3><p>The week, the Cup, a class trophy, the stage or a night. Named assets that carry into every result and post.</p></article>
+      <article class="card card-light"><div class="tag">On the water</div><h3>Seen from the beach</h3><p>Sails, flags, marks, committee and spectator boats. The dinghy course runs right in front of the crowd.</p></article>
+      <article class="card card-light"><div class="tag">On shore</div><h3>In the village</h3><p>Booths, sampling, test drives and hosting, open every day of the week.</p></article>
+      <article class="card card-teal"><div class="tag">Content</div><h3>After the week</h3><p>Race films, reels and coverage built from five days of footage, carried on across the RSS event calendar.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section pearl" id="partners">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ways to partner</div>
+      <h2>Where your brand fits.</h2>
+      <p>Five categories, each with room to build a package around what you need from the week.</p>
+    </div>
+    <div class="card-grid">
+      <article class="card card-navy"><div class="tag">Headline</div><h3>Title partner</h3><p>Your name on the week itself, across every channel, from the first announcement to the final prizegiving.</p></article>
+      <article class="card card-navy"><div class="tag">Racing</div><h3>Cup and classes</h3><p>The overall Cup or a class trophy, with branding on the course, the results and the prizegiving stage.</p></article>
+      <article class="card card-navy"><div class="tag">Public</div><h3>Festival</h3><p>The village, the stage, demo day or a named night. Face to face with the crowd every day.</p></article>
+      <article class="card card-navy"><div class="tag">Marine</div><h3>Industry</h3><p>Showcase berths, dock booths and sea trials, in front of skippers and buyers.</p></article>
+      <article class="card card-navy"><div class="tag">Travel</div><h3>Hospitality and media</h3><p>Airlines, stays, transport and media partners, built into the guest and sailor experience.</p></article>
+      <article class="card card-teal"><div class="tag">Host</div><h3>Somabay is on board.</h3><p>Somabay hosts the week and the programme is being built now. Partners who join early help shape how their brand shows up.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="contact">
+  <div class="glow glow-teal" style="width:640px;height:640px;right:-220px;top:-260px"></div>
+  <div class="glow glow-gold" style="width:420px;height:420px;left:-160px;bottom:-220px"></div>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Next steps</div>
+      <h2>Let's talk.</h2>
+      <p>The best packages are shaped early, while the programme is still being built.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><div><h3>A 30-minute call</h3><p>What you want from the week and who you want to reach.</p></div></div>
+      <div class="step"><div class="step-n">2</div><div><h3>A package built for you</h3><p>Naming, visibility and activation matched to your goals.</p></div></div>
+      <div class="step"><div class="step-n">3</div><div><h3>In before launch</h3><p>Your brand in the programme when the week is announced.</p></div></div>
+    </div>
+    <div class="c-card">
+      <div><h3>Mo Hammoud</h3><div class="role">Founder, Red Sea Sails</div></div>
+      <div class="c-links">
+        <a href="mailto:mo@redseasails.com">mo@redseasails.com</a>
+        <a href="tel:+201206560777">+20 120 656 0777</a>
+        <a href="tel:+201270247317">+20 127 0247 317</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="lockup" style="font-size:13px">Red Sea <span>Sailing Week</span></div>
+    <div>© 2026 Red Sea Sails</div>
+  </div>
+</footer>
+
+</body>
+</html>
